@@ -1,0 +1,10 @@
+.welcomeTitle{
+    display: flex;
+    justify-content: center;
+}
+
+.destinationTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

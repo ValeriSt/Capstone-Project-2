@@ -1,19 +1,89 @@
 <%- include ("partials/header.ejs") %>
-<body>
-<div class="container">
-  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-      <span class="fs-4">Pet Posts</span>
-    </a>
-
-    <ul class="nav nav-pills">
-      <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Categories</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
-      <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-    </ul>
-  </header>
+<div class="px-4 py-5 my-5 text-center">
+  <!-- <img class="d-block mx-auto mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+  <h1 class="display-5 fw-bold text-body-emphasis">Travel Stories</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">Welcome to Travel Stories. Here you can share more about your adventures with other people and have a small touch to other people's adventures too.</p>
+  </div>
 </div>
-</body>
+
+
+<div class="container px-4 py-5" id="custom-cards">
+  <h2 class="pb-2 border-bottom">Top Destinations</h2>
+
+  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+    <div class="col">
+      <a href="/Rome" class="nav-link">
+      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg pb-4 pt-4" style="background-image: url('https://cdn.britannica.com/36/162636-050-932C5D49/Colosseum-Rome-Italy.jpg'); background-size: cover;">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+          <h3 class="destinationTitle mt-5 mb-5 display-4 lh-1 fw-bold">Rome</h3>
+        </div>
+      </div>
+    </a>
+    </div>
+
+    <div class="col">
+      <a href="/Paris" class="nav-link">
+      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg pb-4 pt-4" style="background-image: url('https://media.cntraveler.com/photos/58de89946c3567139f9b6cca/16:9/w_2560%2Cc_limit/GettyImages-468366251.jpg');background-size: cover;">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+          <h3 class="destinationTitle mt-5 mb-5 display-4 lh-1 fw-bold">Paris</h3>
+        </div>
+      </div>
+    </a>
+    </div>
+
+    <div class="col">
+      <a href="/Barcelona" class="nav-link">
+      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg pb-4 pt-4" style="background-image: url('https://media.architecturaldigest.com/photos/5cfea4b0c9f2f22721f26766/master/pass/GettyImages-740527937.jpg'); background-size: cover;">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+          <h3 class="destinationTitle mt-5 mb-5 display-4 lh-1 fw-bold">Barcelona</h3>
+        </div>
+      </div>
+    </a>
+    </div>
+
+  </div>
+</div>
+<div class="container marketing, text-center">
+  
+
+  <!-- Three columns of text below the carousel -->
+  <div class="row">
+    <div class="col-lg-4">
+      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <title>Placeholder</title>
+        <defs>
+            <clipPath id="circleClip">
+                <circle cx="70" cy="70" r="70" />
+            </clipPath>
+        </defs>
+      
+    </svg>
+          <h2 class="fw-normal">Rome, Italy</h2>
+      <p>Exploring Rome felt like stepping into a living museum, with its ancient ruins, bustling piazzas, and mouthwatering cuisine at every turn.</p>
+      <p><a class="btn btn-secondary" href="#">Read more »</a></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+      <h2 class="fw-normal">Paris, France</h2>
+      <p>Paris dazzled me with its timeless elegance, from the iconic landmarks like the Eiffel Tower to the charming streetside cafes serving up delectable pastries and coffee.</p>
+      <p><a class="btn btn-secondary" href="#">Read more »</a></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+      <h2 class="fw-normal">Madrid, Spain</h2>
+      <p>Madrid captivated me with its vibrant energy, lively plazas filled with music and laughter, and the warmth of its people embracing me like a long-lost friend.</p>
+      <p><a class="btn btn-secondary" href="#">Read more »</a></p>
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+
+
+
+</div>
+
+<!-- <div>
+  <h1 class="welcomeTitle">Welcome to Travel Stories!😊 </h1>
+  <h2 class="welcomeTitle">Share your stories here!</h2>
+</div> -->
 
 <%- include("partials/footer.ejs")%>
