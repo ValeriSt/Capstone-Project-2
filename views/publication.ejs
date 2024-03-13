@@ -1,8 +1,9 @@
 <%- include ("partials/header.ejs") %>
 
 <form action="/submit" method="POST">
-    <input type="text" value="First name and Last name">
-    <input type="text" value="Story" maxlength="200">
-</form>
+    <input type="text" name="fName" placeholder="First name">
+    <input type="text" name="Story" placeholder="Story">
+    <input type="submit" value="OK">
+  </form>
 
 <%- include ("partials/footer.ejs") %>
