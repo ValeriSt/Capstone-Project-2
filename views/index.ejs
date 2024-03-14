@@ -7,41 +7,62 @@
   </div>
 </div>
 
-
-<div class="container px-4 py-5" id="custom-cards">
-  <h2 class="pb-2">Top Destinations</h2>
-
-  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-    <div class="col">
-      <a href="/Rome" class="nav-link">
-      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg pb-4 pt-4" style="background-image: url('https://cdn.britannica.com/36/162636-050-932C5D49/Colosseum-Rome-Italy.jpg'); background-size: cover;">
-        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-          <h3 class="destinationTitle mt-5 mb-5 display-4 lh-1 fw-bold">Rome</h3>
-        </div>
+<section title="Destinations">
+  <div class="container px-4 py-5" id="custom-cards">
+    <h2 class="pb-2">Top Destinations</h2>
+    
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+      <div class="col">
+        <a href="/Italy" class="nav-link">
+          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg pb-4 pt-4" style="background-image: url('https://cdn.britannica.com/36/162636-050-932C5D49/Colosseum-Rome-Italy.jpg'); background-size: cover;">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+              <h3 class="destinationTitle mt-5 mb-5 display-4 lh-1 fw-bold">Italy</h3>
+            </div>
+          </div>
+        </a>
       </div>
-    </a>
-    </div>
-
-    <div class="col">
-      <a href="/Paris" class="nav-link">
-      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg pb-4 pt-4" style="background-image: url('https://media.cntraveler.com/photos/58de89946c3567139f9b6cca/16:9/w_2560%2Cc_limit/GettyImages-468366251.jpg');background-size: cover;">
-        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-          <h3 class="destinationTitle mt-5 mb-5 display-4 lh-1 fw-bold">Paris</h3>
-        </div>
+      
+      <div class="col">
+        <a href="/France" class="nav-link">
+          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg pb-4 pt-4" style="background-image: url('https://media.cntraveler.com/photos/58de89946c3567139f9b6cca/16:9/w_2560%2Cc_limit/GettyImages-468366251.jpg');background-size: cover;">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+              <h3 class="destinationTitle mt-5 mb-5 display-4 lh-1 fw-bold">France</h3>
+            </div>
+          </div>
+        </a>
       </div>
-    </a>
-    </div>
-
-    <div class="col">
-      <a href="/Barcelona" class="nav-link">
-      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg pb-4 pt-4" style="background-image: url('https://media.architecturaldigest.com/photos/5cfea4b0c9f2f22721f26766/master/pass/GettyImages-740527937.jpg'); background-size: cover;">
-        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-          <h3 class="destinationTitle mt-5 mb-5 display-4 lh-1 fw-bold">Barcelona</h3>
-        </div>
+      
+      <div class="col">
+        <a href="/Spain" class="nav-link">
+          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg pb-4 pt-4" style="background-image: url('https://media.architecturaldigest.com/photos/5cfea4b0c9f2f22721f26766/master/pass/GettyImages-740527937.jpg'); background-size: cover;">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+              <h3 class="destinationTitle mt-5 mb-5 display-4 lh-1 fw-bold">Spain</h3>
+            </div>
+          </div>
+        </a>
       </div>
-    </a>
     </div>
   </div>
-</div>
+</section>
+  
 
-<%- include("partials/footer.ejs")%>
+<section title="Publications">
+  <div class="container px-4 py-5">
+    <h2 class="pb-2">Publications</h2>
+    <!-- Loop through publications and display them here -->
+    <% publications.forEach(function(publication) { %>
+      <div class="card mb-3">
+        <div class="card-header">
+          <!-- Publication title -->
+          <h5 class="card-title"><%= publication.fName %></h5>
+        </div>
+        <div class="card-body">
+          <!-- Publication content -->
+          <p class="card-text"><%= publication.Story %></p>
+        </div>
+        </div>
+    <% }); %>
+  </div>
+</section>
+  
+  <%- include("partials/footer.ejs")%>
