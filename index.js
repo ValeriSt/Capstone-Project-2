@@ -10,11 +10,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 
 const port = 3000;
-const publications = [
-    { fName: 'John', Story: 'Lorem ipsum dolor sit amet' },
-    { fName: 'Alice', Story: 'Consectetur adipiscing elit' },
-    // Add more publications as needed
-];
+const publications = [];
 // let currentCity = ""; // Initialize variable to store current city
 
 

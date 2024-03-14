@@ -1,3 +1,20 @@
 <%- include ("partials/header.ejs") %>
-
+<section title="Publications">
+    <div class="container px-4 py-5">
+      <h2 class="pb-2">Publications</h2>
+      <!-- Loop through publications and display them here -->
+      <% publications.filter(publication => publication.country === 'Spain').forEach(function(publication) { %>
+        <div class="card mb-3">
+          <div class="card-header">
+            <!-- Publication title -->
+            <h5 class="card-title"><%= publication.fName %></h5>
+          </div>
+          <div class="card-body">
+            <!-- Publication content -->
+            <p class="card-text"><%= publication.Story %></p>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </section>
 <%- include ("partials/footer.ejs") %>

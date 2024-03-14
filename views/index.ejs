@@ -50,7 +50,7 @@
   <div class="container px-4 py-5">
     <h2 class="pb-2">Publications</h2>
     <!-- Loop through publications and display them here -->
-    <% publications.forEach(function(publication) { %>
+    <% publications.filter(publication => publication.country === 'Other').forEach(function(publication) { %>
       <div class="card mb-3">
         <div class="card-header">
           <!-- Publication title -->

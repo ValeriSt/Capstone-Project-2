@@ -5,7 +5,7 @@
   <div class="container px-4 py-5">
     <h2 class="pb-2">Publications</h2>
     <!-- Loop through publications and display them here -->
-    <% publications.forEach(function(publication) { %>
+    <% publications.filter(publication => publication.country === 'Italy').forEach(function(publication) { %>
       <div class="card mb-3">
         <div class="card-header">
           <!-- Publication title -->
@@ -15,9 +15,10 @@
           <!-- Publication content -->
           <p class="card-text"><%= publication.Story %></p>
         </div>
-        </div>
+      </div>
     <% }); %>
   </div>
 </section>
+
 
 <%- include ("partials/footer.ejs") %>
