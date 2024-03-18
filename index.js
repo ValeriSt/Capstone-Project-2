@@ -8,10 +8,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
-
 const port = 3000;
 const publications = [];
-
+var startTime = new Date().getTime();
 
 app.use(express.static("public"));
 
@@ -48,6 +47,11 @@ app.post("/submit", (req, res) => {
         res.redirect(`/${country}`)
     }
 });
+
+
+// Set the initial start time when the page loads
+
+
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);

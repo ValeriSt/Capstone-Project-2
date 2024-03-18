@@ -1,20 +1,40 @@
 <%- include ("partials/header.ejs") %>
+
 <section title="Publications">
-    <div class="container-country px-4 py-5">
-      <h2 class="pb-2">Publications</h2>
-      <!-- Loop through publications and display them here -->
-      <% publications.filter(publication => publication.country === 'Spain').forEach(function(publication) { %>
-        <div class="card mb-3">
-          <div class="card-header">
-            <!-- Publication title -->
-            <h5 class="card-title"><%= publication.fName %></h5>
+  <div class="container-country px-4 py-5">
+    <div class="title">
+      <h1 class="firstRow">We love</h1>
+      <h1 class="secondRow">SPAIN</h1>
+    </div>
+    <div class="container-cards row">
+      <% 
+        // Get the current time once when the page is loaded
+        var currentTime = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        
+        publications.filter(publication => publication.country === 'Spain').forEach(function(publication, index) { 
+          // Check if it's a multiple of 2 (i.e., even index) to start a new row
+          if (index % 2 === 0) { %>
+            <div class="row">
+          <% } %>
+          <div class="col-md-6">
+            <div class="card mb-3 post-content">
+              <div class="card-header">
+                <h5 class="card-title"><%= publication.fName %></h5>
+              </div>
+              <div class="card-body">
+                <p class="card-text"><%= publication.Story %></p>
+                <p class="date">Published at <%= currentTime %>.</p>
+              </div>
+            </div>
           </div>
-          <div class="card-body">
-            <!-- Publication content -->
-            <p class="card-text"><%= publication.Story %></p>
-          </div>
-        </div>
+          <% 
+            // Check if it's the last item or if the next item will start a new row
+            if (index === publications.length - 1 || (index + 1) % 2 === 0) { %>
+              </div>
+          <% } %>
       <% }); %>
     </div>
-  </section>
+  </div>
+</section>
+
 <%- include ("partials/footer.ejs") %>

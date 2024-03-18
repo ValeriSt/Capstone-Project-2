@@ -1,4 +1,3 @@
-<div class="backgr">
 <%- include ("partials/header.ejs") %>
 
 <section title="Publications">
@@ -7,25 +6,36 @@
       <h1 class="firstRow">We love</h1>
       <h1 class="secondRow">ITALY</h1>
     </div>
-    <div class="container-grid row">
-      <div class="posts col-md-8">
-        <h3 class="postTitle">Stories</h3>
-        <!-- Loop through publications and display them here -->
-        <% publications.filter(publication => publication.country === 'Italy').forEach(function(publication) { %>
-        <div class="card mb-3 post-content">
-          <div class="card-header">
-            <!-- Publication title -->
-            <h5 class="card-title"><%= publication.fName %></h5>
+    <div class="container-cards row">
+      <% 
+        // Get the current time once when the page is loaded
+        var currentTime = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        
+        publications.filter(publication => publication.country === 'Italy').forEach(function(publication, index) { 
+          // Check if it's a multiple of 2 (i.e., even index) to start a new row
+          if (index % 2 === 0) { %>
+            <div class="row">
+          <% } %>
+          <div class="col-md-6">
+            <div class="card mb-3 post-content">
+              <div class="card-header">
+                <h5 class="card-title"><%= publication.fName %></h5>
+              </div>
+              <div class="card-body">
+                <p class="card-text"><%= publication.Story %></p>
+                <!-- Display the fixed publication time captured when the page loaded -->
+                <p class="date">Published at <%= currentTime %>.</p>
+              </div>
+            </div>
           </div>
-          <div class="card-body">
-            <!-- Publication content -->
-            <p class="card-text"><%= publication.Story %></p>
-          </div>
-        </div>
-        <% }); %>
-      </div>
-      </div>
-      </div>
+          <% 
+            // Check if it's the last item or if the next item will start a new row
+            if (index === publications.length - 1 || (index + 1) % 2 === 0) { %>
+              </div>
+          <% } %>
+      <% }); %>
+    </div>
+  </div>
 </section>
+
 <%- include ("partials/footer.ejs") %>
-</div>

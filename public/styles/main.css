@@ -29,6 +29,7 @@ footer {
     margin-right: 400px;
 }
 
+
 .firstRow{
     display: flex;
     font-size: 30px;   
@@ -43,35 +44,118 @@ footer {
     font-family: "Pacifico", cursive; 
     justify-content: center;
 }
-.title{
-    position:static;
-}
-.postTitle{
-    font-family: "Pacifico", cursive; 
+.container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the rows horizontally */
+  }
+  
+  .card {
+    margin: 10px; /* Add some margin between the cards */
+  }
+  
+  @media (max-width: 767px) {
+    .card {
+      width: calc(50% - 20px); /* Adjust card width for small screens */
+    }
+  }
+  
+.date{
+    font-weight: bold;
 }
 
-.container-grid{
-    display: grid;
-    grid-template-columns: 1 1;
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.backgr {
-    display: grid;
-    position: relative;
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
 }
 
-.backgr::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: url("../assets/images/1000_F_380206296_DgWpTIeJybGfu3HS2alsyqPzLnPhzRF2.jpg");
-    background-color: transparent;
+/* Container styles */
+.container-post {
+    min-height: calc(87vh - 100px);
+    max-width: 600px;
+    margin: auto;
+    border-radius: 10px;
+    padding-top: 150px;
+}
+
+/* Heading styles */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form group styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Label styles */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Input styles */
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* Select arrow styles */
+select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>');
     background-repeat: no-repeat;
-    background-position: right center;
-    background-size: auto;
-    opacity: 0.5;
+    background-position: right 10px center;
 }
 
+/* Textarea styles */
+textarea {
+    height: 150px;
+}
+
+/* Button styles */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.otherStories{
+    display: flex;
+    font-size: 45px;
+    font-family: "Pacifico", cursive; 
+    justify-content: center;
+}
