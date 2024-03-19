@@ -6,6 +6,7 @@
       <h1 class="firstRow">We love</h1>
       <h1 class="secondRow">ITALY</h1>
     </div>
+    <% if (publications.some(publication => publication.country === 'Italy')) { %>
     <div class="container cards row">
       <% 
         // Get the current time once when the page is loaded
@@ -41,6 +42,9 @@
           <% } %>
       <% }); %>
     </div>
+    <% } else { %>
+        <h2 class="noPublications">No stories at the moment. Wanna be the first to create one?</h2>
+    <%}%>
   </div>
 </section>
 
