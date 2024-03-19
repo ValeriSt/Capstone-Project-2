@@ -1,12 +1,12 @@
 <%- include ("partials/header.ejs") %>
 
 <section title="Publications">
-  <div class="container-country px-4 py-5">
+  <div class="container px-4 py-5 country">
     <div class="title">
       <h1 class="firstRow">We love</h1>
       <h1 class="secondRow">ITALY</h1>
     </div>
-    <div class="container-cards row">
+    <div class="container cards row">
       <% 
         // Get the current time once when the page is loaded
         var currentTime = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
@@ -17,7 +17,7 @@
             <div class="row">
           <% } %>
           <div class="col-md-6">
-            <div class="card mb-3 post-content">
+            <div class="card mb-3 post-content post-<%= index %>">
               <div class="card-header">
                 <h5 class="card-title"><%= publication.fName %></h5>
               </div>
@@ -25,6 +25,12 @@
                 <p class="card-text"><%= publication.Story %></p>
                 <!-- Display the fixed publication time captured when the page loaded -->
                 <p class="date">Published at <%= currentTime %>.</p>
+                <div id="rating">
+        <% for (let i = 1; i <= 5; i++) { %>
+          <span onclick="rate('<%= index %>', `<%=i%>`)" class="star">★</span>
+        <% } %>
+    </div>
+    <span id="userRating-<%= index %>">0</span>/5
               </div>
             </div>
           </div>
@@ -37,5 +43,6 @@
     </div>
   </div>
 </section>
+
 
 <%- include ("partials/footer.ejs") %>

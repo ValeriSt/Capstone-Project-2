@@ -1,15 +1,15 @@
 <%- include ("partials/header.ejs") %>
-<div class="px-4 py-5 my-5 text-center">
-  <!-- <img class="d-block mx-auto mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-  <h1 class="display-5 fw-bold text-body-emphasis">Travel Stories</h1>
+<!-- <div class="px-4 py-5 my-5 text-center">
+ <img class="d-block mx-auto mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+  <h1 class="display-5 fw-bold text-body-emphasis otherStories">Travel Stories</h1>
   <div class="col-lg-6 mx-auto">
     <p class="lead mb-4">Welcome to Travel Stories. Here you can share more about your adventures with other people and have a small touch to other people's adventures too.</p>
   </div>
-</div>
-
+</div> -->
+<div class="mainPage">
 <section title="Destinations">
-  <div class="container px-4 py-5" id="custom-cards">
-    <h2 class="pb-2">Top Destinations</h2>
+  <div class="container destinations" id="custom-cards">
+    <h2 class="pb-2 otherStories">Top Destinations</h2>
     
     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
       <div class="col">
@@ -49,10 +49,12 @@
 
 <section title="Publications">
   <div class="container px-4 py-5">
-    <div class="title">
-      <h1 class="otherStories">Other Stories</h1>
-    </div>
-    <div class="container-cards row">
+    <% if (publications.some(publication => publication.country === 'Other')) { %>
+      <div class="title">
+        <h1 class="otherStories">Other Stories</h1>
+      </div>
+    <% } %>
+    <div class="container cards row">
       <% 
         // Get the current time once when the page is loaded
         var currentTime = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
@@ -71,6 +73,12 @@
                 <p class="card-text"><%= publication.Story %></p>
                 <!-- Display the fixed publication time captured when the page loaded -->
                 <p class="date">Published at <%= currentTime %>.</p>
+                <div id="rating">
+        <% for (let i = 1; i <= 5; i++) { %>
+            <span class="star" onclick="rate(`<%=i%>`)">★</span>
+        <% } %>
+    </div>
+    <p>Your rating: <span id="userRating">0</span>/5</p>
               </div>
             </div>
           </div>
@@ -83,5 +91,5 @@
     </div>
   </div>
 </section>
-  
+  </div>
   <%- include("partials/footer.ejs")%>

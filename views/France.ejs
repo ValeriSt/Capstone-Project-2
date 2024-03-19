@@ -1,12 +1,12 @@
 <%- include ("partials/header.ejs") %>
 
 <section title="Publications">
-  <div class="container-country px-4 py-5">
+  <div class="container px-4 py-5 country">
     <div class="title">
       <h1 class="firstRow">We love</h1>
       <h1 class="secondRow">FRANCE</h1>
     </div>
-    <div class="container-cards row">
+    <div class="container cards row">
       <% 
         // Get the current time once when the page is loaded
         var currentTime = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
@@ -25,6 +25,12 @@
                 <p class="card-text"><%= publication.Story %></p>
                 <!-- Display the fixed publication time captured when the page loaded -->
                 <p class="date">Published at <%= currentTime %>.</p>
+                <div id="rating">
+        <% for (let i = 1; i <= 5; i++) { %>
+            <span class="star" onclick="rate(`<%=i%>`)">★</span>
+        <% } %>
+    </div>
+    <p>Your rating: <span id="userRating">0</span>/5</p>
               </div>
             </div>
           </div>

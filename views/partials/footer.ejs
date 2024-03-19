@@ -19,6 +19,30 @@
   </footer>
 </div>
 
+
+<script>
+  // public/script.js
+// public/script.js
+function rate(index, rating) {
+    // Update the displayed rating for the specific post
+    document.getElementById('userRating-' + index).textContent = rating;
+    
+    // Update the style of the stars for the specific post
+    const stars = document.querySelectorAll('.post-' + index + ' .star');
+    stars.forEach((star, starIndex) => {
+        if (starIndex < rating) {
+            star.classList.add('selected');
+        } else {
+            star.classList.remove('selected');
+        }
+    });
+    
+    // Save the rating to local storage for the specific post
+    const postRatings = JSON.parse(localStorage.getItem('postRatings')) || {};
+    postRatings[index] = rating;
+    localStorage.setItem('postRatings', JSON.stringify(postRatings));
+}
+</script>
 </body>
 
 </html>
