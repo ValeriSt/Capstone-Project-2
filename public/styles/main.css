@@ -30,7 +30,6 @@ footer {
 }
 
 .mainPage{
-    min-height: calc(87vh - 100px);
     margin-left: 400px;
     margin-right: 400px;
 }
@@ -186,3 +185,16 @@ button:hover {
     text-align: center;
     padding-top: 100px;
 }
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; 
+  }
+  
+  .carousel {
+    width: 50%; /* Adjust the width as needed */
+    border-radius: 10px; /* Add rounded edges */
+    overflow: hidden; /* Hide overflow content */
+  }
+  

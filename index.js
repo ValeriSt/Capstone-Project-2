@@ -7,12 +7,14 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 
 const app = express();
+
 app.use(bodyParser.urlencoded({ extended: false }));
+
 const port = 3000;
 const publications = [];
 var startTime = new Date().getTime();
 
-app.use(express.static("public"));
+app.use(express.static("./public"));
 
 app.get("/", (req, res) => {
     res.render("index.ejs", { publications: publications });
