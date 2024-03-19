@@ -38,19 +38,15 @@ app.get("/publication", (req, res) => {
 
 app.post("/submit", (req, res) => {
     const { fName, Story, country } = req.body;
-    // Assuming you save the new publication to your array
+
     publications.push({ fName, Story, country });
-    // Render the "publication.ejs" template with the updated list of publications
+
     if (country === "Other") {
         res.redirect("/");
     }else{
         res.redirect(`/${country}`)
     }
 });
-
-
-// Set the initial start time when the page loads
-
 
 
 app.listen(port, () => {
