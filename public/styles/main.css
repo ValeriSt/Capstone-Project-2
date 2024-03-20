@@ -190,11 +190,28 @@ button:hover {
     display: flex;
     justify-content: center;
     margin-top: 20px; 
-  }
-  
-  .carousel {
+    /* Set height based on the first image */
+    height: auto; /* Reset height */
+}
+
+.carousel {
     width: 50%; /* Adjust the width as needed */
     border-radius: 10px; /* Add rounded edges */
     overflow: hidden; /* Hide overflow content */
-  }
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+/* Ensure all images have the same height */
+.carousel-inner .carousel-item {
+    height: auto; /* Reset height */
+}
+
+.carousel-inner .carousel-item:first-of-type {
+    height: 100%; /* Set height based on the first image */
+}
+
   

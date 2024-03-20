@@ -40,9 +40,11 @@ function rate(index, rating) {
     // Save the rating to local storage for the specific post
     const postRatings = JSON.parse(localStorage.getItem('postRatings')) || {};
     postRatings[index] = rating;
-    localStorage.setItem('postRatings', JSON.stringify(postRatings));
+    localStorage.setItem('postRatings', JSON.stringify(postRatings)); 
+    
 }
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
